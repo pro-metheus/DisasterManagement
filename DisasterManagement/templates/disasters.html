@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.highcharts.com/highcharts.src.js"></script>
+	<title>current disasters</title>
+</head>
+<body>
+	 <div id="container"></div>
+	{%for disaster in disasters%}
+		<b>reported date : {{disaster.record_date}} <br>
+		<b>disaster type : {{disaster.disaster_type}} <br>
+		<b>alert : {{disaster.alert}} <br>
+		<b>reported by : {{disaster.reported_by.user.username}} <br>
+		<b>affected count : {{disaster.count}}<br>
+		<b>place : {{disaster.place.pincode}}<br>
+		mark yourself affected by clicking <a href="{%url 'mark' disaster.id%}">here</a> <br>
+		view analysis <a href="{%url 'analysis' disaster.id%}">here</a> <br>
+		------------------------------------------------------------
+	{%endfor%}
+</body>
+</html>

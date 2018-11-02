@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://code.highcharts.com/highcharts.src.js"></script>
+</head>
+<body>
+	<div id="container"></div>
+	<script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'pie'
+        },
+        title: {
+            text: 'disaster affected plot'
+        },
+        xAxis: {
+            categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
+        },
+        series: [{
+            name: 'affected count',
+            data: [{{disaster.count}},11700]
+        }, ]
+    });
+  </script>
+</body>
+</html>
